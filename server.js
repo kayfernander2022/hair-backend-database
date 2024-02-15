@@ -6,6 +6,7 @@ const express = require('express')//import express
 const app = express()//create app object.
 require('dotenv').config()//get .env variables
 const {PORT = 3000, DATABASE_URL}=process.env
+const mongoose = require('./models/connection')
 
 /////////////////////////
 // MIDDLEWARE IMPORT
@@ -21,7 +22,7 @@ app.use(cors())
 app.use(morgan('dev'))//in dev enviroment
 
 /////////////////////////
-// ROUTERS
+// ROUTERS/ROUTES
 /////////////////////////
 
 // home route that says "hello world" to test server is working.
