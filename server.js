@@ -29,7 +29,7 @@ app.use(morgan('dev'))//in dev enviroment
 app.get("/", (req, res) => {
   //res.json let's us send a response as JSON data and not just text with res.send.
   res.json({
-      response: "Hello World"
+      response: "Hello World 2/22"
   })
   //OR
   //res.send('Hello World')
