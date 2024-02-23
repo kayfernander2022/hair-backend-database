@@ -7,6 +7,7 @@ const app = express()//create app object.
 require('dotenv').config()//get .env variables
 const {PORT = 3000, DATABASE_URL}=process.env
 const mongoose = require('./models/connection')
+const hairRouter=require('./controllers/hair')
 
 /////////////////////////
 // MIDDLEWARE IMPORT
@@ -20,10 +21,12 @@ const morgan = require('morgan')
 app.use(express.json())//needed when sending a body in the post and update routes. This middleware converts a JSON string from the api to a JSON object for data manipulation by the application. 
 app.use(cors())
 app.use(morgan('dev'))//in dev enviroment
+//app.use('/hair', hairRouter)
 
 /////////////////////////
 // ROUTERS/ROUTES
 /////////////////////////
+
 
 // home route that says "hello world" to test server is working.
 app.get("/", (req, res) => {
