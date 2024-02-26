@@ -21,22 +21,24 @@ const morgan = require('morgan')
 app.use(express.json())//needed when sending a body in the post and update routes. This middleware converts a JSON string from the api to a JSON object for data manipulation by the application. 
 app.use(cors())
 app.use(morgan('dev'))//in dev enviroment
-//app.use('/hair', hairRouter)
+
 
 /////////////////////////
 // ROUTERS/ROUTES
 /////////////////////////
-
-
 // home route that says "hello world" to test server is working.
 app.get("/", (req, res) => {
   //res.json let's us send a response as JSON data and not just text with res.send.
   res.json({
-      response: "Hello World 2/22"
+      response: "Hello World 2/23"
   })
   //OR
   //res.send('Hello World')
 });
+
+app.use('/hair', hairRouter)
+
+
 
 
 /////////////////////////
