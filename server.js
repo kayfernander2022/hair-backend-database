@@ -26,7 +26,7 @@ app.use(morgan('dev'))//in dev enviroment
 /////////////////////////
 // ROUTERS/ROUTES
 /////////////////////////
-// home route that says "hello world" to test server is working.
+// Home/Test route that says "hello world" to test server is working.
 app.get("/", (req, res) => {
   //res.json let's us send a response as JSON data and not just text with res.send.
   res.json({
@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
   //res.send('Hello World')
 });
 
+//hair controller/all hair routes
 app.use('/hair', hairRouter)
 
 
